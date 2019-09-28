@@ -12,7 +12,8 @@
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
     "semi": [2, "never"],
-    "react/jsx-tag-spacing": ["off", { "beforeSelfClosing": "always" }]
+    "react/jsx-tag-spacing": ["off", { "beforeSelfClosing": "always" }],
+    "react/jsx-props-no-spreading": ["off"]
   },
   "globals": {
     "window": true,
