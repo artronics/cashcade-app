@@ -1,6 +1,8 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/styles'
+import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import { makeStyles } from '@material-ui/styles'
+import React from 'react'
+import Button from './Button'
 
 const useStyle = makeStyles((theme) => ({
   form: {
@@ -8,6 +10,14 @@ const useStyle = makeStyles((theme) => ({
   paper: {
     flexGrow: 1,
     padding: theme.spacing(1),
+  },
+  controls: {
+    flexGrow: 1,
+  },
+  control: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    marginLeft: theme.spacing(2),
   },
 }))
 
@@ -20,6 +30,12 @@ export default function Form(props) {
       <form className={classes.form}>
         {children}
       </form>
+      <div className={classes.controls}>
+        <Grid container direction="row-reverse" xs={12}>
+          <Grid item className={classes.control}><Button color="primary">Save</Button></Grid>
+          <Grid item className={classes.control}><Button>Cancel</Button></Grid>
+        </Grid>
+      </div>
     </Paper>
   )
 }

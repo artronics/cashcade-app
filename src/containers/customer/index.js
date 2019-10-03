@@ -1,7 +1,6 @@
-import React from 'react'
-import { TextField } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
 import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/styles'
+import React from 'react'
 import Form from '../../components/ui/Form'
 import Input from '../../components/ui/Input'
 
@@ -10,11 +9,7 @@ const useStyle = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    // paddingLeft: theme.spacing(2),
     padding: theme.spacing(1),
-  },
-  form: {
-    // marginBottom: theme.spacing(4),
   },
   textField: {
     margin: theme.spacing(0),
@@ -57,30 +52,3 @@ export default function Customer() {
     </Form>
   )
 }
-
-const f = () => (
-  <Grid container item spacing={1}>
-    <Grid item xs={6}>
-      <Grid item>
-        <TextField
-          label="First Name"
-          fullWidth
-        />
-      </Grid>
-      <Grid item>
-        <TextField
-          label="Last Name"
-          fullWidth
-        />
-      </Grid>
-    </Grid>
-    <Grid item xs={6}>
-      <Grid item xs={12}>
-        <TextField
-          label="Last Name kir"
-          fullWidth
-        />
-      </Grid>
-    </Grid>
-  </Grid>
-)
