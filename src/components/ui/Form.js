@@ -1,3 +1,4 @@
+import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/styles'
@@ -19,19 +20,24 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
     marginLeft: theme.spacing(2),
   },
+  divider: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(2),
+  },
 }))
 
 export default function Form(props) {
   const classes = useStyle()
-  const { children } = props
+  const { children, controls } = props
 
   return (
     <Paper className={classes.paper}>
       <form className={classes.form}>
         {children}
       </form>
+      <Divider className={classes.divider}/>
       <div className={classes.controls}>
-        <Grid container direction="row-reverse" xs={12}>
+        <Grid container direction="row-reverse">
           <Grid item className={classes.control}><Button color="primary">Save</Button></Grid>
           <Grid item className={classes.control}><Button>Cancel</Button></Grid>
         </Grid>
