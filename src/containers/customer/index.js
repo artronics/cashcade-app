@@ -20,9 +20,13 @@ const useStyle = makeStyles((theme) => ({
 const box = (h, c) => (<div style={{ height: `${h}px`, backgroundColor: c, margin: '8px' }}>FOO</div>)
 export default function Customer() {
   const classes = useStyle()
+  const controls = [
+    { key: 1, text: 'Save', color: 'primary' },
+    { key: 2, text: 'Cancel' },
+  ]
 
   return (
-    <Form>
+    <Form controls={controls}>
       <div className={classes.root}>
         <Grid container>
           <Grid item container xs={12}>

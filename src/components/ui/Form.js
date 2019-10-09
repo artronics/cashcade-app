@@ -6,8 +6,7 @@ import React from 'react'
 import Button from './Button'
 
 const useStyle = makeStyles((theme) => ({
-  form: {
-  },
+  form: {},
   paper: {
     flexGrow: 1,
     padding: theme.spacing(1),
@@ -30,18 +29,27 @@ export default function Form(props) {
   const classes = useStyle()
   const { children, controls } = props
 
+  const controlsElement = controls
+    ? (
+      <div className={classes.controls}>
+        <Divider className={classes.divider}/>
+        <Grid container direction="row-reverse">
+          {controls.map((control) => (
+            <Grid item className={classes.control} key={control.key}>
+              <Button color={control.color}>{control.text}</Button>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+    )
+    : null
+
   return (
     <Paper className={classes.paper}>
       <form className={classes.form}>
         {children}
       </form>
-      <Divider className={classes.divider}/>
-      <div className={classes.controls}>
-        <Grid container direction="row-reverse">
-          <Grid item className={classes.control}><Button color="primary">Save</Button></Grid>
-          <Grid item className={classes.control}><Button>Cancel</Button></Grid>
-        </Grid>
-      </div>
+      {controlsElement}
     </Paper>
   )
 }
